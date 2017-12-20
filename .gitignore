@@ -1,0 +1,9 @@
+.idea
+*/play/*
+main
+drayage
+cmd/cmd
+play
+streamer/streamer
+*.swp
+*.example*
