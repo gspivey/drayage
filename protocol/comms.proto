@@ -1,0 +1,46 @@
+//
+//
+//
+
+syntax = "proto3";
+
+package protocol;
+
+
+// CLI Will start a server locally (fork/exec)
+//   Make sure server is systemD friendly
+//  CLI will talk to localhost over gRPC as client
+service CommsProto {
+    rpc RMVolume(Volume) returns (Status) {}
+
+    rpc LSVolume(Volume) returns (stream DockerVolume) {}
+
+    rpc AddVolume(Volume) returns (Status) {}
+
+    rpc GetVolume(VolumeAndHost) returns (Status) {}
+
+    rpc VolumeFiles(Volume) returns (stream Files) {}
+}
+
+message Volume {
+    string name = 1;
+}
+
+message Status {
+    string status = 1;
+}
+
+message DockerVolume {
+    string name = 1;
+    string size = 2;
+    string updated = 3;
+}
+
+message VolumeAndHost {
+    string name = 1;
+    string hostFQDM = 2;
+}
+
+message Files {
+    string path = 1;
+}
