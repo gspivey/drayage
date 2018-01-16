@@ -1,0 +1,14 @@
+---
+nodes:
+    - ip_hostname:   192.168.10.1
+      name:  node00
+
+    - ip_hostname:   node01.compute
+      name:  node01
+
+    - ip_hostname:   192.168.10.3
+      name:  node02
+
+    - ip_hostname:   node03.compute
+      name:  node03
+...

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"time"
 )
 
 // We will use the FiveGiB limit for dynamic transfer limit
@@ -56,15 +57,17 @@ func GetFiles(root string) ([]string, error) {
 
 }
 
-func GetFilesPathSize(path string) (filelist map[string]int64, totalsize int64, err error) {
+func GetFilesPathSize(path string) (filelist map[string]int64, modifiedTime map[string]time.Time, totalsize int64, err error) {
 	// composite type map needs to be initialized
 	filelist = make(map[string]int64)
-	return filelist, totalsize, filepath.Walk(path, func(fpath string, fi os.FileInfo, err error) error {
+	modifiedTime = make(map[string]time.Time)
+	return filelist, modifiedTime, totalsize, filepath.Walk(path, func(fpath string, fi os.FileInfo, err error) error {
 		if !fi.IsDir() {
 			currentfile, err := os.Stat(fpath)
 			if err != nil {
 				return err
 			}
+			modifiedTime[fpath] = fi.ModTime()
 			// get the size
 			size := currentfile.Size()
 			filelist[fpath] = size

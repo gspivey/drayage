@@ -16,12 +16,11 @@ var rootCmd = &cobra.Command{
 The drayage cli will move docker volume's to other nodes on command`,
 	Run: func(cmd *cobra.Command, args []string) {
 		// Do Stuff Here
+		fmt.Println("For usage instructions Run: --help")
 	},
 }
 
 var cfgFile string
-var projectBase string
-var userLicense string
 
 func Execute() {
 	rootCmd.Execute()
@@ -29,7 +28,7 @@ func Execute() {
 
 func init() {
 	cobra.OnInitialize(initConfig)
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cobra.yaml)")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.drayage.yaml)")
 	//rootCmd.PersistentFlags().StringVarP(&projectBase, "projectbase", "b", "", "base project directory eg. github.com/spf13/")
 	//rootCmd.PersistentFlags().StringP("author", "a", "YOUR NAME", "Author name for copyright attribution")
 	//rootCmd.PersistentFlags().StringVarP(&userLicense, "license", "l", "", "Name of license for the project (can provide `licensetext` in config)")
@@ -56,7 +55,7 @@ func initConfig() {
 
 		// Search config in home directory with name ".cobra" (without extension).
 		viper.AddConfigPath(home)
-		viper.SetConfigName(".cobra")
+		viper.SetConfigName(".drayage")
 	}
 
 	if err := viper.ReadInConfig(); err != nil {

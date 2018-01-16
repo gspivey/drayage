@@ -20,12 +20,13 @@ func main() {
 	defer conn.Close()
 	client := pb.NewCommsProtoClient(conn)
 
-	v := &pb.Volume{"test"}
+	vt := &pb.Volume{"test"}
+	v := &pb.Volume{"concourse-worker-pki"}
 	vh := &pb.VolumeAndHost{"test", "host.name.domain"}
-	clientpackage.AddVolume(client, v)
+	clientpackage.AddVolume(client, vt)
 	clientpackage.GetVolume(client, vh)
 	clientpackage.LSVolume(client, v)
-	clientpackage.RMVolume(client, v)
-	clientpackage.VolumeFiles(client, v)
+	clientpackage.RMVolume(client, vt)
+	clientpackage.ProcesVolumeFiles(client, v)
 
 }
