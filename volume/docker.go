@@ -41,7 +41,7 @@ func AddVolume(volumeName string) (volume types.Volume, err error) {
 	if err != nil {
 		return volume, err
 	}
-	options := volumetypes.VolumesCreateBody{}
+	options := volumetypes.VolumeCreateBody{}
 	options.Name = volumeName
 	volume, err = cli.VolumeCreate(context.Background(), options)
 	return volume, err
@@ -99,7 +99,7 @@ func VolumeExpiriment() {
 	emptyArgs := filters.Args{}
 	//
 	volumeListBody, err := cli.VolumeList(context.Background(), emptyArgs)
-	fmt.Printf("volume list body content \n%s\n", volumeListBody)
+	fmt.Printf("volume list body content \n%v\n", volumeListBody)
 	fmt.Print("Volume's:\n")
 	v := volumeListBody.Volumes
 	// TODO add filter on driver
