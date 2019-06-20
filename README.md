@@ -39,6 +39,12 @@ deployment.
 Drayage follows [semver](https://semver.org/spec/v2.0.0.html) (Semantic Versioning)
 Public API's will not be stable until the 1.0.0 relesase
 
+## Install Dependencies
+
+1. gcc
+2. protoc v3.7.1
+3. Docker v18.09.5
+
 ## Roadmap
 
 ### Pre 1.0.0 Features
@@ -51,7 +57,7 @@ Public API's will not be stable until the 1.0.0 relesase
 2. File Streaming optimization
 3. /etc/hosts x.drayage "dns"
 4. Support for consul/etcD volume state information storage
-5. Support configurtion for dynamic migration of volume's larger then 5GB (not recommended)
+5. Support configurtion for dynamic migration of volume's larger than 5GB (not recommended)
 
 ### X.O.O Features
 [TBD]
@@ -66,7 +72,7 @@ Public API's will not be stable until the 1.0.0 relesase
 
 2. Why a 5GB dynamic transfer limit? 
   Drayage is focused on speed - by keeping the container storage migration to a 
-  5GB limit, we can ensure speedy deployments. 5GB is configuratble, however 
+  5GB limit, we can ensure speedy deployments. 5GB is configurable, however 
   it is at your own risk.
 
 3. How do I get a new feature into the the next/future major release?
