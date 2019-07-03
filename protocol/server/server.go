@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log"
 
-	pb "github.com/drayage/protocol"
-	"github.com/drayage/volume"
+	pb "github.com/gspivey/drayage/protocol"
+	"github.com/gspivey/drayage/volume"
 )
 
 type Server struct{}

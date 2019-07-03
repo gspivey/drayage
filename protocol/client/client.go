@@ -5,7 +5,7 @@ import (
 	"io"
 	"log"
 
-	pb "github.com/drayage/protocol"
+	pb "github.com/gspivey/drayage/protocol"
 )
 
 func RMVolume(client pb.CommsProtoClient, v *pb.Volume) {
