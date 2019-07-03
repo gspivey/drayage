@@ -5,8 +5,8 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/drayage/protocol"
-	"github.com/drayage/protocol/server"
+	pb "github.com/gspivey/drayage/protocol"
+	"github.com/gspivey/drayage/protocol/server"
 	"github.com/spf13/cobra"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"

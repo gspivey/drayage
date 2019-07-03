@@ -4,8 +4,8 @@ import (
 	"flag"
 	"log"
 
-	pb "github.com/drayage/protocol"
-	clientpackage "github.com/drayage/protocol/client"
+	pb "github.com/gspivey/drayage/protocol"
+	clientpackage "github.com/gspivey/drayage/protocol/client"
 	"google.golang.org/grpc"
 )
 

@@ -3,9 +3,9 @@ package cmd
 import (
 	"log"
 
-	pb "github.com/drayage/protocol"
-	clientpackage "github.com/drayage/protocol/client"
-	dv "github.com/drayage/volume"
+	pb "github.com/gspivey/drayage/protocol"
+	clientpackage "github.com/gspivey/drayage/protocol/client"
+	dv "github.com/gspivey/drayage/volume"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"google.golang.org/grpc"

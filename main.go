@@ -1,8 +1,7 @@
 package main
 
 import (
-
-	"github.com/drayage/cmd"
+	"github.com/gspivey/drayage/cmd"
 )
 
 func main() {
