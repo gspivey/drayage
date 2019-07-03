@@ -12,7 +12,7 @@ import (
 )
 
 func VolumePath(volumeName string) (mountPath string, err error) {
-	cli, err := client.NewEnvClient()
+	cli, err := client.NewClientWithOpts(client.WithVersion("1.39"))
 	if err != nil {
 		return "", err
 	}
@@ -37,7 +37,7 @@ func VolumePath(volumeName string) (mountPath string, err error) {
 }
 
 func AddVolume(volumeName string) (volume types.Volume, err error) {
-	cli, err := client.NewEnvClient()
+	cli, err := client.NewClientWithOpts(client.WithVersion("1.39"))
 	if err != nil {
 		return volume, err
 	}
@@ -48,7 +48,7 @@ func AddVolume(volumeName string) (volume types.Volume, err error) {
 }
 
 func RemoveVolume(volumeName string) (err error) {
-	cli, err := client.NewEnvClient()
+	cli, err := client.NewClientWithOpts(client.WithVersion("1.39"))
 	if err != nil {
 		return err
 	}
@@ -75,7 +75,7 @@ func AnalyzeVolume(volume *types.Volume) (name string, size int64, updated time.
 }
 
 func ListVolumes() (volumeList []*types.Volume, err error) {
-	cli, err := client.NewEnvClient()
+	cli, err := client.NewClientWithOpts(client.WithVersion("1.39"))
 	if err != nil {
 		return volumeList, err
 	}
@@ -91,7 +91,7 @@ func ListVolumes() (volumeList []*types.Volume, err error) {
 }
 
 func VolumeExpiriment() {
-	cli, err := client.NewEnvClient()
+	cli, err := client.NewClientWithOpts(client.WithVersion("1.39"))
 	if err != nil {
 		panic(err)
 	}
