@@ -6,7 +6,8 @@ import (
 )
 
 func TestWriteToTar(t *testing.T) {
-	err := WriteToTar()
+	name := "gtest"
+	err := WriteToTar(name)
 	if err != nil {
 		fmt.Println(err)
 	}
